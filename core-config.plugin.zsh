@@ -1,7 +1,7 @@
-DEPENDENCES_ZSH+=( zpm-zsh/helpers )
+DEPENDENCES_ZSH+=( zpm-zsh/helpers zpm-zsh/colors )
 
 if command -v zpm >/dev/null; then
-  zpm zpm-zsh/helpers
+  zpm zpm-zsh/helpers zpm-zsh/colors
 fi
 
 source ${${(%):-%x}:a:h}/vars.zsh
