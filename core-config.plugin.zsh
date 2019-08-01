@@ -12,4 +12,5 @@ source ${${(%):-%x}:a:h}/keyboard.zsh
 source ${${(%):-%x}:a:h}/modules.zsh
 source ${${(%):-%x}:a:h}/cd.zsh
 source ${${(%):-%x}:a:h}/path-fix.zsh
+source ${${(%):-%x}:a:h}/users.zsh
 
