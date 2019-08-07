@@ -1,8 +1,10 @@
 #!/usr/bin/env zsh
 
-: ${EDITOR:="vim"}
-: ${VISUAL:="vim"}
-: ${PAGER:="less"}
+WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
+
+EDITOR="vim"
+VISUAL="vim"
+PAGER="less"
 
 export EDITOR
 export VISUAL
