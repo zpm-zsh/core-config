@@ -23,10 +23,8 @@ setopt numericglobsort
 setopt nocaseglob
 setopt nocheckjobs
 setopt multios              # Write to multiple descriptors.
-setopt extendedglob        # Use extended globbing syntax.
+setopt extendedglob         # Use extended globbing syntax.
 unsetopt clobber            # Do not overwrite existing files with > and >>.
-# Use >! and >>! to bypass.
-setopt COMBINING_CHARS
-
-
+unsetopt EXTENDED_HISTORY
+setopt COMBINING_CHARS      # Use >! and >>! to bypass.
 
