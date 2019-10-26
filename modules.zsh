@@ -15,6 +15,18 @@ if [[ ${ZSH_VERSION} != 5.1.1 && ${TERM} != "dumb" ]]; then
   zle -N self-insert url-quote-magic
 fi
 
+autoload -Uz compinit
+_comp_files=(${ZDOTDIR:-$HOME}/.zcompdump(Nm-20))
+if (( $#_comp_files )); then
+  compinit -i -C
+else
+  compinit -i
+fi
+unset _comp_files
+
+zstyle ":completion::complete:*" use-cache 1
+zstyle ":completion::complete:*" cache-path "$HOME/.cache/zsh"
+
 setopt braceccl
 setopt interactive_comments
 setopt nohup
@@ -22,9 +34,10 @@ setopt nobeep
 setopt numericglobsort
 setopt nocaseglob
 setopt nocheckjobs
-setopt multios              # Write to multiple descriptors.
-setopt extendedglob         # Use extended globbing syntax.
-unsetopt clobber            # Do not overwrite existing files with > and >>.
-unsetopt EXTENDED_HISTORY
-setopt COMBINING_CHARS      # Use >! and >>! to bypass.
+setopt multios              
+setopt extendedglob        
+setopt COMBINING_CHARS
 
+unsetopt clobber            
+unsetopt EXTENDED_HISTORY
+unsetopt BG_NICE
