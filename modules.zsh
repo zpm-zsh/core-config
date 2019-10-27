@@ -24,6 +24,14 @@ else
 fi
 unset _comp_files
 
+{
+  # Compile the completion dump to increase startup speed.
+  zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+  if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
+    zcompile "$zcompdump"
+  fi
+} &!
+
 zstyle ":completion::complete:*" use-cache 1
 zstyle ":completion::complete:*" cache-path "$HOME/.cache/zsh"
 
