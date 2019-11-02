@@ -2,10 +2,6 @@
 
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
 
-EDITOR="vim"
-VISUAL="vim"
-PAGER="less"
-
-export EDITOR
-export VISUAL
-export PAGER
+export EDITOR="vim"
+export VISUAL="vim"
+export PAGER="less"
