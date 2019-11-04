@@ -35,8 +35,13 @@ setopt nocaseglob
 setopt nocheckjobs
 setopt multios              
 setopt extendedglob        
-setopt COMBINING_CHARS
+setopt combining_chars
+
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt inc_append_history
 
 unsetopt clobber            
-unsetopt EXTENDED_HISTORY
-unsetopt BG_NICE
+unsetopt extended_history
+unsetopt bg_nice
