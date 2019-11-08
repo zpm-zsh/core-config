@@ -8,7 +8,7 @@ _DIRNAME="${0:h}"
 DEPENDENCES_ZSH+=( zpm-zsh/helpers zpm-zsh/colors )
 
 if (( $+functions[zpm] )) >/dev/null; then
-  zpm zpm-zsh/helpers zpm-zsh/colors
+  zpm zpm-zsh/helpers,inline zpm-zsh/colors,inline
 fi
 
 source "${_DIRNAME}/vars.zsh"
