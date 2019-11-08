@@ -7,30 +7,36 @@ if (( $+functions[zpm] )) >/dev/null; then
 fi
 
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
+HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
 
 export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="less"
 
 
+setopt append_history
+setopt autocd
 setopt braceccl
-setopt interactive_comments
-setopt nohup
-setopt nobeep
-setopt numericglobsort
-setopt nocaseglob
-setopt nocheckjobs
-setopt multios              
-setopt extendedglob        
 setopt combining_chars
-
+setopt correct
+setopt correct_all
+setopt hist_expire_dups_first 
+setopt hist_find_no_dups
+setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_verify
 setopt inc_append_history
-
-setopt correct
-setopt autocd
+setopt interactive_comments
+setopt multios              
+setopt nobeep
+setopt nocaseglob
+setopt nocheckjobs
+setopt nohup
+setopt numericglobsort
+setopt share_history
 
 unsetopt clobber            
 unsetopt extended_history
@@ -126,8 +132,6 @@ bindkey '^X^E' edit-command-line
 bindkey -M menuselect " " accept-and-menu-complete
 
 
-
-
 alias tmp='cd $(mktemp -d)'
 alias cdo='cd -'
 alias -- -='cd -'
@@ -136,7 +140,6 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
-
 
 
 appendpath ~/.bin
