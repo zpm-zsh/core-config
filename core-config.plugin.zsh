@@ -1,14 +1,21 @@
+#!/usr/bin/env zsh
+
+# Standarized $0 handling, following:
+# https://github.com/zdharma/Zsh-100-Commits-Club/blob/master/Zsh-Plugin-Standard.adoc
+0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
+_DIRNAME="${0:h}"
+
 DEPENDENCES_ZSH+=( zpm-zsh/helpers zpm-zsh/colors )
 
 if (( $+functions[zpm] )) >/dev/null; then
   zpm zpm-zsh/helpers zpm-zsh/colors
 fi
 
-source ${${(%):-%x}:a:h}/vars.zsh
-source ${${(%):-%x}:a:h}/completions.zsh
-source ${${(%):-%x}:a:h}/correct.zsh
-source ${${(%):-%x}:a:h}/keyboard.zsh
-source ${${(%):-%x}:a:h}/modules.zsh
-source ${${(%):-%x}:a:h}/cd.zsh
-source ${${(%):-%x}:a:h}/path-fix.zsh
-source ${${(%):-%x}:a:h}/users.zsh
+source "${_DIRNAME}/vars.zsh"
+source "${_DIRNAME}/completions.zsh"
+source "${_DIRNAME}/correct.zsh"
+source "${_DIRNAME}/keyboard.zsh"
+source "${_DIRNAME}/modules.zsh"
+source "${_DIRNAME}/cd.zsh"
+source "${_DIRNAME}/path-fix.zsh"
+source "${_DIRNAME}/users.zsh"
