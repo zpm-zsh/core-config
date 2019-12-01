@@ -15,13 +15,11 @@ export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="less"
 
-
 setopt append_history
 setopt autocd
 setopt braceccl
 setopt combining_chars
 setopt correct
-setopt correct_all
 setopt hist_expire_dups_first 
 setopt hist_find_no_dups
 setopt hist_ignore_dups
@@ -41,7 +39,6 @@ setopt share_history
 unsetopt clobber            
 unsetopt extended_history
 unsetopt bg_nice
-
 
 zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $USER|sed "/ps/d"'
 zstyle ':completion:*:processes' insert-ids menu yes select
@@ -117,7 +114,6 @@ zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
 bindkey -M menuselect " " accept-and-menu-complete
-
 
 alias tmp='cd $(mktemp -d)'
 alias cdo='cd -'
