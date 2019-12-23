@@ -34,7 +34,6 @@ setopt nocaseglob
 setopt nocheckjobs
 setopt nohup
 setopt numericglobsort
-setopt share_history
 
 unsetopt clobber            
 unsetopt extended_history
