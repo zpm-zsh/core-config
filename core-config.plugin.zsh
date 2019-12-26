@@ -70,6 +70,7 @@ else
   zstyle ':completion:*:warnings' format $'No matches for: %d'
 fi
 
+mkdir -p "${TMPDIR:-/tmp}/zsh-${UID}/cache"
 zstyle ":completion::complete:*" use-cache 1
 zstyle ":completion::complete:*" cache-path "${TMPDIR:-/tmp}/zsh-${UID}/cache"
 
