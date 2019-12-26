@@ -71,7 +71,7 @@ else
 fi
 
 mkdir -p "${TMPDIR:-/tmp}/zsh-${UID}/cache"
-zstyle ":completion::complete:*" use-cache 1
+zstyle ":completion::complete:*" use-cache true
 zstyle ":completion::complete:*" cache-path "${TMPDIR:-/tmp}/zsh-${UID}/cache"
 
 
