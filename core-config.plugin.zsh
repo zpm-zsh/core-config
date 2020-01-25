@@ -106,7 +106,7 @@ bindkey "^[3;5~" delete-char
 
 bindkey '^[[3;5~' delete-word
 
-bindkey '^H' backward-delete-word
+bindkey '^H' backward-kill-word
 
 # Edit the current command line in $EDITOR
 autoload -U edit-command-line
