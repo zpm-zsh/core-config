@@ -1,15 +1,13 @@
 #!/usr/bin/env zsh
 
-DEPENDENCES_ZSH+=( zpm-zsh/helpers zpm-zsh/colors )
-
 if (( $+functions[zpm] )) >/dev/null; then
-  zpm zpm-zsh/helpers,inline zpm-zsh/colors,inline
+  zpm zpm-zsh/helpers zpm-zsh/colors
 fi
 
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
 HISTFILE=~/.zsh_history
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=1000
+SAVEHIST=1000
 
 export EDITOR="vim"
 export VISUAL="vim"
@@ -20,7 +18,7 @@ setopt autocd
 setopt braceccl
 setopt combining_chars
 setopt correct
-setopt hist_expire_dups_first 
+setopt hist_expire_dups_first
 setopt hist_find_no_dups
 setopt hist_ignore_dups
 setopt hist_ignore_space
@@ -28,14 +26,14 @@ setopt hist_reduce_blanks
 setopt hist_verify
 setopt inc_append_history
 setopt interactive_comments
-setopt multios              
+setopt multios
 setopt nobeep
 setopt nocaseglob
 setopt nocheckjobs
 setopt nohup
 setopt numericglobsort
 
-unsetopt clobber            
+unsetopt clobber
 unsetopt extended_history
 unsetopt bg_nice
 
@@ -73,7 +71,6 @@ fi
 mkdir -p "${TMPDIR:-/tmp}/zsh-${UID}/cache"
 zstyle ":completion::complete:*" use-cache true
 zstyle ":completion::complete:*" cache-path "${TMPDIR:-/tmp}/zsh-${UID}/cache"
-
 
 zmodload zsh/complist
 
