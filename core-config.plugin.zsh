@@ -1,17 +1,12 @@
 #!/usr/bin/env zsh
-
-if (( $+functions[zpm] )) >/dev/null; then
-  zpm zpm-zsh/helpers zpm-zsh/colors
-fi
-
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
-export EDITOR="vim"
-export VISUAL="vim"
-export PAGER="less"
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
 
 setopt append_history
 setopt autocd
@@ -69,8 +64,8 @@ else
 fi
 
 mkdir -p "${TMPDIR:-/tmp}/zsh-${UID}/cache"
-zstyle ":completion::complete:*" use-cache true
-zstyle ":completion::complete:*" cache-path "${TMPDIR:-/tmp}/zsh-${UID}/cache"
+zstyle ':completion::complete:*' use-cache true
+zstyle ':completion::complete:*' cache-path "${TMPDIR:-/tmp}/zsh-${UID}/cache"
 
 zmodload zsh/complist
 
