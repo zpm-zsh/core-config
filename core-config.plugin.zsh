@@ -73,14 +73,14 @@ bindkey -e
 
 bindkey '^R' history-incremental-search-backward
 
-bindkey "^[[5~" up-line-or-history
-bindkey "^[[6~" down-line-or-history
+bindkey '^[[5~' up-line-or-history
+bindkey '^[[6~' down-line-or-history
 
-bindkey "^[OH" beginning-of-line
-bindkey "^[[H" beginning-of-line
+bindkey '^[OH' beginning-of-line
+bindkey '^[[H' beginning-of-line
 
-bindkey "^[OF"  end-of-line
-bindkey "^[[F"  end-of-line
+bindkey '^[OF'  end-of-line
+bindkey '^[[F'  end-of-line
 
 bindkey '^[[1;5C' forward-word
 bindkey '^[[C' forward-word
@@ -93,8 +93,8 @@ bindkey '^[[D' backward-char
 
 bindkey '^?' backward-delete-char
 
-bindkey "^[[3~" delete-char
-bindkey "^[3;5~" delete-char
+bindkey '^[[3~' delete-char
+bindkey '^[3;5~' delete-char
 
 bindkey '^[[3;5~' delete-word
 
