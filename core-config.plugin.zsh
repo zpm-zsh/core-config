@@ -104,7 +104,7 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
-bindkey -M menuselect " " accept-and-menu-complete
+bindkey -M menuselect ' ' accept-and-menu-complete
 
 alias tmp='cd $(mktemp -d)'
 alias cdo='cd -'
