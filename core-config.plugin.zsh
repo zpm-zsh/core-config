@@ -62,9 +62,9 @@ if [[ "$CLICOLOR" != '0' ]]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 'ma=7;33'
 fi
 
-mkdir -p "${TMPDIR:-/tmp}/zsh-${UID}/cache"
+zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path "${TMPDIR:-/tmp}/zsh-${UID}/cache"
+zstyle ':completion::complete:*' cache-path "${TMPDIR:-/tmp}/zsh-${UID}"
 
 zmodload zsh/complist
 
