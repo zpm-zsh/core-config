@@ -33,8 +33,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 zstyle ':completion:*:messages' format '%d'
 
-zstyle ':completion:*' list-colors ''
-
 zstyle ':completion:*:functions' ignored-patterns '_*'
 zstyle ':completion:*:*:zcompile:*' ignored-patterns '(*~|*.zwc)'
 
@@ -42,8 +40,6 @@ zstyle ':completion:*:warnings' format "%{${c[red]}${c[bold]}%}No matches for:%{
 
 if [[ "$CLICOLOR" != '0' ]]; then
   zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=36=31'
-  zstyle ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==36=36}:${(s.:.)LS_COLORS}")'
-  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} 'ma=7;33'
 fi
 
 zstyle ':completion:*' accept-exact '*(N)'
