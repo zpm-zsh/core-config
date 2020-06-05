@@ -115,5 +115,6 @@ setopt hist_verify
 unsetopt extended_history
 
 # PATH
-appendpath ~/.bin
-appendpath ~/.local/bin
+appendpath "${HOME}/.bin"
+appendpath "${HOME}/.local/bin"
+
