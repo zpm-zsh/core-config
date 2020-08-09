@@ -3,10 +3,19 @@ WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
 SAVEHIST=1000
 
 setopt append_history
+setopt auto_remove_slash
 setopt autocd
+setopt bang_hist
 setopt braceccl
+setopt chase_links
 setopt combining_chars
 setopt correct
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_verify
 setopt inc_append_history
 setopt interactive_comments
 setopt multios
@@ -16,8 +25,10 @@ setopt nocheckjobs
 setopt nohup
 setopt numericglobsort
 
-unsetopt clobber
 unsetopt bg_nice
+unsetopt clobber
+unsetopt extended_history
+unsetopt rm_star_silent
 
 zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $USER|sed "/ps/d"'
 zstyle ':completion:*:processes' insert-ids menu yes select
@@ -96,7 +107,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
-# EDITOR 
+# EDITOR
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
@@ -105,16 +116,6 @@ export PAGER='less'
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=5000
 
-setopt hist_expire_dups_first
-setopt hist_find_no_dups
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_reduce_blanks
-setopt hist_verify
-
-unsetopt extended_history
-
 # PATH
 appendpath "${HOME}/.bin"
 appendpath "${HOME}/.local/bin"
-
