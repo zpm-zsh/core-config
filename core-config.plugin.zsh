@@ -49,9 +49,7 @@ zstyle ':completion:*:*:zcompile:*' ignored-patterns '(*~|*.zwc)'
 
 zstyle ':completion:*:warnings' format "%{${c[red]}${c[bold]}%}No matches for:%{${c[yellow]}${c[bold]}%} %d"
 
-if [[ "$CLICOLOR" != '0' ]]; then
-  zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=36=31'
-fi
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=36=31'
 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache 1
@@ -89,11 +87,6 @@ bindkey '^[3;5~' delete-char
 bindkey '^[[3;5~' delete-word
 
 bindkey '^H' backward-kill-word
-
-# Edit the current command line in $EDITOR
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^X^E' edit-command-line
 
 bindkey -M menuselect ' ' accept-and-menu-complete
 
