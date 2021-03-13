@@ -20,7 +20,6 @@ setopt inc_append_history
 setopt interactive_comments
 setopt multios
 setopt nobeep
-setopt nocaseglob
 setopt nocheckjobs
 setopt nohup
 setopt numericglobsort
