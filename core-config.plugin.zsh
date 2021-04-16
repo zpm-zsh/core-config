@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
-SAVEHIST=1000
 
 setopt append_history
 setopt auto_remove_slash
@@ -99,14 +98,11 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
-# EDITOR
-export EDITOR='vim'
-export VISUAL='vim'
-export PAGER='less'
 
 # HISTORY
 HISTFILE="${HOME}/.zsh_history"
-HISTSIZE=5000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # PATH
 appendpath "${HOME}/.bin"
