@@ -9,9 +9,6 @@ setopt braceccl
 setopt chase_links
 setopt combining_chars
 setopt correct
-setopt hist_expire_dups_first
-setopt hist_find_no_dups
-setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_verify
@@ -65,8 +62,8 @@ bindkey '^[[6~' down-line-or-history
 bindkey '^[OH' beginning-of-line
 bindkey '^[[H' beginning-of-line
 
-bindkey '^[OF'  end-of-line
-bindkey '^[[F'  end-of-line
+bindkey '^[OF' end-of-line
+bindkey '^[[F' end-of-line
 
 bindkey '^[[1;5C' forward-word
 bindkey '^[[C' forward-word
@@ -90,14 +87,7 @@ bindkey -M menuselect ' ' accept-and-menu-complete
 
 # CD
 alias tmp='cd $(mktemp -d)'
-alias cdo='cd -'
 alias -- -='cd -'
-
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-
 
 # HISTORY
 HISTFILE="${HOME}/.zsh_history"
