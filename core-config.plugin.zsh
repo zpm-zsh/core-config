@@ -2,23 +2,30 @@
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
 
 setopt append_history
+setopt auto_cd
+setopt auto_pushd           # push the old directory onto the stack on cd.
 setopt auto_remove_slash
-setopt autocd
 setopt bang_hist
 setopt braceccl
+setopt cdable_vars          # change directory to a path stored in a variable.
 setopt chase_links
 setopt combining_chars
 setopt correct
+setopt extended_glob        # use extended globbing syntax.
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_verify
 setopt inc_append_history
 setopt interactive_comments
 setopt multios
-setopt nobeep
-setopt nocheckjobs
-setopt nohup
+setopt multios              # write to multiple descriptors.
+setopt no_beep
+setopt no_checkjobs
+setopt no_hup
 setopt numericglobsort
+setopt pushd_ignore_dups    # do not store duplicates in the stack.
+setopt pushd_silent         # do not print the directory stack after pushd or popd.
+setopt pushd_to_home        # push to home directory when no argument is given.
 
 unsetopt bg_nice
 unsetopt clobber
