@@ -102,5 +102,5 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 # PATH
-appendpath "${HOME}/.bin"
-appendpath "${HOME}/.local/bin"
+prependpath "${HOME}/.bin"
+prependpath "${HOME}/.local/bin"
