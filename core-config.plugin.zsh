@@ -1,36 +1,40 @@
 #!/usr/bin/env zsh
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
 
-setopt append_history
-setopt auto_cd
-setopt auto_pushd           # push the old directory onto the stack on cd.
-setopt auto_remove_slash
-setopt bang_hist
+setopt appendhistory
+setopt autocd
+setopt autopushd           # push the old directory onto the stack on cd.
+setopt autoremoveslash
+setopt banghist
 setopt braceccl
-setopt cdable_vars          # change directory to a path stored in a variable.
-setopt chase_links
-setopt combining_chars
+setopt cdablevars          # change directory to a path stored in a variable.
+setopt chaselinks
+setopt combiningchars
 setopt correct
-setopt extended_glob        # use extended globbing syntax.
-setopt hist_ignore_space
-setopt hist_reduce_blanks
-setopt hist_verify
-setopt inc_append_history
-setopt interactive_comments
-setopt multios
+setopt extendedglob        # use extended globbing syntax.
+setopt histexpiredupsfirst
+setopt histfindnodups
+setopt histignorealldups
+setopt histignoredups
+setopt histignorespace
+setopt histreduceblanks
+setopt histsavenodups
+setopt histverify
+setopt incappendhistory
+setopt interactivecomments
 setopt multios              # write to multiple descriptors.
-setopt no_beep
-setopt no_checkjobs
-setopt no_hup
 setopt numericglobsort
-setopt pushd_ignore_dups    # do not store duplicates in the stack.
-setopt pushd_silent         # do not print the directory stack after pushd or popd.
-setopt pushd_to_home        # push to home directory when no argument is given.
+setopt pushdignoredups    # do not store duplicates in the stack.
+setopt pushdsilent         # do not print the directory stack after pushd or popd.
+setopt pushdtohome        # push to home directory when no argument is given.
 
-unsetopt bg_nice
+unsetopt beep
+unsetopt checkjobs
+unsetopt hup
+unsetopt bgnice
 unsetopt clobber
-unsetopt extended_history
-unsetopt rm_star_silent
+unsetopt extendedhistory
+unsetopt rmstar_silent
 
 zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $USER|sed "/ps/d"'
 zstyle ':completion:*:processes' insert-ids menu yes select
@@ -56,6 +60,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=36=31'
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path "${TMPDIR:-/tmp}/zsh-${UID}"
+
+zstyle ':completion:*' insert-tab false
 
 zmodload zsh/complist
 
