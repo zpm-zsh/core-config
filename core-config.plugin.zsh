@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+
+ZSH_CACHE_DIR="${ZSH_CACHE_DIR:-${TMPDIR:-/tmp}/zsh-${UID:-user}}"
+
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
 
 setopt appendhistory
@@ -59,7 +62,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=36=31'
 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path "${TMPDIR:-/tmp}/zsh-${UID}"
+zstyle ':completion::complete:*' cache-path "${ZSH_CACHE_DIR}/cache"
 
 zstyle ':completion:*' insert-tab false
 
