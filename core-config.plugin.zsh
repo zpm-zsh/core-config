@@ -15,9 +15,7 @@ setopt chaselinks
 setopt combiningchars
 setopt correct
 setopt extendedglob        # use extended globbing syntax.
-setopt histexpiredupsfirst
 setopt histfindnodups
-setopt histignorealldups
 setopt histignoredups
 setopt histignorespace
 setopt histreduceblanks
