@@ -4,17 +4,16 @@ ZSH_CACHE_DIR="${ZSH_CACHE_DIR:-${TMPDIR:-/tmp}/zsh-${UID:-user}}"
 
 WORDCHARS='*?_[]~=&;!#$%^(){}<>:.-'
 
-setopt appendhistory
+# CD
 setopt autocd
 setopt autopushd           # push the old directory onto the stack on cd.
-setopt autoremoveslash
-setopt banghist
-setopt braceccl
-setopt cdablevars          # change directory to a path stored in a variable.
-setopt chaselinks
-setopt combiningchars
-setopt correct
-setopt extendedglob        # use extended globbing syntax.
+#setopt autoremoveslash
+setopt pushdignoredups    # do not store duplicates in the stack.
+setopt pushdsilent         # do not print the directory stack after pushd or popd.
+setopt pushdtohome        # push to home directory when no argument is given.
+
+# History
+setopt appendhistory
 setopt histfindnodups
 setopt histignoredups
 setopt histignorespace
@@ -22,19 +21,24 @@ setopt histreduceblanks
 setopt histsavenodups
 setopt histverify
 setopt incappendhistory
+unsetopt extendedhistory
+
+# Other
+setopt banghist
+setopt braceccl
+setopt cdablevars          # change directory to a path stored in a variable.
+setopt chaselinks
+setopt combiningchars
+setopt correct
+setopt extendedglob        # use extended globbing syntax.
 setopt interactivecomments
 setopt multios              # write to multiple descriptors.
 setopt numericglobsort
-setopt pushdignoredups    # do not store duplicates in the stack.
-setopt pushdsilent         # do not print the directory stack after pushd or popd.
-setopt pushdtohome        # push to home directory when no argument is given.
-
-unsetopt beep
+#unsetopt beep
 unsetopt checkjobs
 unsetopt hup
 unsetopt bgnice
 unsetopt clobber
-unsetopt extendedhistory
 unsetopt rmstar_silent
 
 zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $USER|sed "/ps/d"'
