@@ -41,7 +41,7 @@ unsetopt bgnice
 unsetopt clobber
 unsetopt rmstar_silent
 
-zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $USER|sed "/ps/d"'
+zstyle ':completion:*:processes' command 'NOCOLORS=1 ps -U $USER | awk "!/ps -U/"'
 zstyle ':completion:*:processes' insert-ids menu yes select
 zstyle ':completion:*:processes-names' command 'NOCOLORS=1 ps xho command|sed "s/://g"'
 zstyle ':completion:*:processes' sort false
@@ -84,10 +84,7 @@ bindkey '^[OF' end-of-line
 bindkey '^[[F' end-of-line
 
 bindkey '^[[1;5C' forward-word
-bindkey '^[[C' forward-word
-
 bindkey '^[[1;5D' backward-word
-bindkey '^[[D' backward-word
 
 bindkey '^[[C' forward-char
 bindkey '^[[D' backward-char
@@ -108,7 +105,8 @@ alias tmp='cd $(mktemp -d)'
 alias -- -='cd -'
 
 # HISTORY
-HISTFILE="${HOME}/.zsh_history"
+HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
+mkdir -p "${HISTFILE:h}"
 HISTSIZE=10000
 SAVEHIST=10000
 
